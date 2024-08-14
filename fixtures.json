@@ -1,0 +1,626 @@
+[
+  {
+    "model": "enrollment.subject",
+    "pk": 1,
+    "fields": {
+      "name": "Linearna algebra",
+      "code": "SIT001",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 1,
+      "semester_part_time": 1,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 2,
+    "fields": {
+      "name": "Fizika",
+      "code": "SIT002",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 1,
+      "semester_part_time": 3,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 3,
+    "fields": {
+      "name": "Osnove elektrotehnike",
+      "code": "SIT003",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 1,
+      "semester_part_time": 1,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 4,
+    "fields": {
+      "name": "Digitalna i mikroprocesorska tehnika",
+      "code": "SIT004",
+      "description": "no description",
+      "credits": 7,
+      "semester_full_time": 1,
+      "semester_part_time": 2,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 5,
+    "fields": {
+      "name": "Uporaba računala",
+      "code": "SIT005",
+      "description": "no description",
+      "credits": 4,
+      "semester_full_time": 1,
+      "semester_part_time": 1,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 6,
+    "fields": {
+      "name": "Engleski jezik 1",
+      "code": "SIT006",
+      "description": "no description",
+      "credits": 2,
+      "semester_full_time": 1,
+      "semester_part_time": 1,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 7,
+    "fields": {
+      "name": "Analiza 1",
+      "code": "SIT007",
+      "description": "no description",
+      "credits": 7,
+      "semester_full_time": 2,
+      "semester_part_time": 2,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 8,
+    "fields": {
+      "name": "Osnove elektronike",
+      "code": "SIT008",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 2,
+      "semester_part_time": 2,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 9,
+    "fields": {
+      "name": "Arhitektura i organizacija digitalnih računala",
+      "code": "SIT009",
+      "description": "no description",
+      "credits": 7,
+      "semester_full_time": 2,
+      "semester_part_time": 3,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 10,
+    "fields": {
+      "name": "Uvod u programiranje",
+      "code": "SIT010",
+      "description": "no description",
+      "credits": 8,
+      "semester_full_time": 2,
+      "semester_part_time": 3,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 11,
+    "fields": {
+      "name": "Engleski jezik 2",
+      "code": "SIT011",
+      "description": "no description",
+      "credits": 2,
+      "semester_full_time": 2,
+      "semester_part_time": 2,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 12,
+    "fields": {
+      "name": "Primijenjena i numerička matematika",
+      "code": "SIT012",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 3,
+      "semester_part_time": 4,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 13,
+    "fields": {
+      "name": "Programske metode i apstrakcije",
+      "code": "SIT013",
+      "description": "no description",
+      "credits": 8,
+      "semester_full_time": 3,
+      "semester_part_time": 4,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 14,
+    "fields": {
+      "name": "Baze poYtaka",
+      "code": "SIT014",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 3,
+      "semester_part_time": 5,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 15,
+    "fields": {
+      "name": "Informacijski sustavi",
+      "code": "SIT015",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 3,
+      "semester_part_time": 4,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 16,
+    "fields": {
+      "name": "Tehnički Engleski jezik",
+      "code": "SIT016",
+      "description": "no description",
+      "credits": 4,
+      "semester_full_time": 3,
+      "semester_part_time": 5,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 17,
+    "fields": {
+      "name": "Računalne mreže",
+      "code": "SIT017",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 5,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 18,
+    "fields": {
+      "name": "Operacijski sustavi",
+      "code": "SIT018",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 5,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 19,
+    "fields": {
+      "name": "Strukture podataka i algoritmi",
+      "code": "SIT019",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 20,
+    "fields": {
+      "name": "Objektno programiranje",
+      "code": "SIT020",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 21,
+    "fields": {
+      "name": "Baze podataka 2",
+      "code": "SIT021",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 22,
+    "fields": {
+      "name": "Mrežne usluge i programiranje",
+      "code": "SIT022",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 23,
+    "fields": {
+      "name": "Arhitektura osobnih računala",
+      "code": "SIT023",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 24,
+    "fields": {
+      "name": "Projektiranje i upravljanje računalnim mrežama",
+      "code": "SIT024",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 25,
+    "fields": {
+      "name": "Projektiranje informacijskih sustava",
+      "code": "SIT025",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 26,
+    "fields": {
+      "name": "Informatizacija poslovanja",
+      "code": "SIT026",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 4,
+      "semester_part_time": 6,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 27,
+    "fields": {
+      "name": "Ekonomika i organizacija poduzeća",
+      "code": "SIT027",
+      "description": "no description",
+      "credits": 2,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 28,
+    "fields": {
+      "name": "Analiza 2",
+      "code": "SIT028",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 29,
+    "fields": {
+      "name": "Industrijska praksa",
+      "code": "SIT029",
+      "description": "no description",
+      "credits": 2,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 30,
+    "fields": {
+      "name": "Arhitektura poslužiteljskih računala",
+      "code": "SIT030",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 31,
+    "fields": {
+      "name": "Sigurnost računala i podataka",
+      "code": "SIT031",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 32,
+    "fields": {
+      "name": "Programski alati na UNIX računalima",
+      "code": "SIT032",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 33,
+    "fields": {
+      "name": "Napredno Windows programiranje",
+      "code": "SIT033",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 34,
+    "fields": {
+      "name": "Objektno orijentirano modeliranje",
+      "code": "SIT034",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 35,
+    "fields": {
+      "name": "Programiranje u Javi",
+      "code": "SIT035",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 36,
+    "fields": {
+      "name": "Programiranje na internetu",
+      "code": "SIT036",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 37,
+    "fields": {
+      "name": "Elektroničko poslovanje",
+      "code": "SIT037",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 5,
+      "semester_part_time": 7,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 38,
+    "fields": {
+      "name": "Diskretna matematika",
+      "code": "SIT038",
+      "description": "no description",
+      "credits": 6,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "N"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 39,
+    "fields": {
+      "name": "Upravljanje poslužiteljskim računalima",
+      "code": "SIT039",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 40,
+    "fields": {
+      "name": "Programiranje u C#",
+      "code": "SIT040",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 41,
+    "fields": {
+      "name": "Društveni informacijski sustavi",
+      "code": "SIT041",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 42,
+    "fields": {
+      "name": "Oblikovanje Web stranica",
+      "code": "SIT042",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 43,
+    "fields": {
+      "name": "Vođenje projekata i dokumentacija",
+      "code": "SIT043",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 44,
+    "fields": {
+      "name": "Informatizacija proizvodnje",
+      "code": "SIT044",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 45,
+    "fields": {
+      "name": "Analiza i obrada podataka",
+      "code": "SIT045",
+      "description": "no description",
+      "credits": 5,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 46,
+    "fields": {
+      "name": "Njemački jezik",
+      "code": "SSZP40",
+      "description": "no description",
+      "credits": 4,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 47,
+    "fields": {
+      "name": "Talijanski jezik",
+      "code": "SSZP50",
+      "description": "no description",
+      "credits": 4,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "Y"
+    }
+  },
+  {
+    "model": "enrollment.subject",
+    "pk": 48,
+    "fields": {
+      "name": "Završni rad",
+      "code": "SIT046",
+      "description": "no description",
+      "credits": 8,
+      "semester_full_time": 6,
+      "semester_part_time": 8,
+      "is_elective": "N"
+    }
+  }
+]

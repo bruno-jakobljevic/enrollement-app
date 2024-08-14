@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.d
 
 class Role(models.Model):
     class Roles(models.TextChoices):
@@ -11,7 +10,7 @@ class Role(models.Model):
     role_name = models.CharField(max_length=2, choices=Roles.choices, default=Roles.STUDENT)
 
     def __str__(self):
-        return self.role_name
+        return self.get_role_name_display()
 
 class Profile(models.Model):
     class Status(models.TextChoices):
@@ -22,6 +21,9 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.NONE)
+
+    def __str__(self):
+        return self.user.username + " - " + self.role.__str__() + " - " + self.user.email + " - " + self.get_status_display()
 
 class Subject(models.Model):
     class Electiveness(models.TextChoices):
@@ -36,17 +38,15 @@ class Subject(models.Model):
     semester_full_time = models.IntegerField()
     semester_part_time = models.IntegerField()
     is_elective = models.CharField(max_length=2, choices=Electiveness.choices, default=Electiveness.NO)
-
     def __str__(self):
-        return self.name
+        return self.name + " - " + str(self.code) + " - " + str(self.credits)
 
 class Enrollment(models.Model):
     class Status(models.TextChoices):
-        NOTENROLLED = 'NE', 'Not Enrolled'
         ENROLLED = 'E', 'Enrolled'
         PASSED = 'P', 'Passed'
         FAILED = 'F', 'Failed'
 
     student = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
-    predmet = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, blank=True)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=3, choices=Status.choices, default=Status.ENROLLED)
