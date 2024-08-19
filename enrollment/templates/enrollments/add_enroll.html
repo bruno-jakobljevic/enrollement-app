@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Add Enroll {% endblock %} 
+{% block content %}
+<form method="POST">
+{{form}}
+<input type="submit" value="Submit">
+{% csrf_token %}
+</form>
+{% endblock %}

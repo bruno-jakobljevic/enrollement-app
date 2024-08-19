@@ -7,7 +7,7 @@ class Role(models.Model):
         MENTOR = 'M', 'Mentor'
         STUDENT = 'S', 'Student'
 
-    role_name = models.CharField(max_length=2, choices=Roles.choices, default=Roles.STUDENT)
+    role_name = models.CharField(max_length=2, choices=Roles.choices)
 
     def __str__(self):
         return self.get_role_name_display()
@@ -19,14 +19,14 @@ class Profile(models.Model):
         PART_TIME = 'PT', 'Part-time'
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True, blank=True)
-    status = models.CharField(max_length=2, choices=Status.choices, default=Status.NONE)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True, blank=True, default=3)
+    status = models.CharField(max_length=2, choices=Status.choices, default='FT')
 
     def __str__(self):
         return self.user.username + " - " + self.role.__str__() + " - " + self.user.email + " - " + self.get_status_display()
 
-class Subject(models.Model):
-    class Electiveness(models.TextChoices):
+class Course(models.Model):
+    class Optional(models.TextChoices):
         YES = 'Y', 'Yes'
         NO = 'N', 'No'
 
@@ -37,7 +37,7 @@ class Subject(models.Model):
     credits = models.IntegerField()
     semester_full_time = models.IntegerField()
     semester_part_time = models.IntegerField()
-    is_elective = models.CharField(max_length=2, choices=Electiveness.choices, default=Electiveness.NO)
+    is_optional = models.CharField(max_length=2, choices=Optional.choices, default=Optional.NO)
     def __str__(self):
         return self.name + " - " + str(self.code) + " - " + str(self.credits)
 
@@ -45,8 +45,11 @@ class Enrollment(models.Model):
     class Status(models.TextChoices):
         ENROLLED = 'E', 'Enrolled'
         PASSED = 'P', 'Passed'
-        FAILED = 'F', 'Failed'
+        FAILEDREQ = 'FR', 'Failed Requirements'
 
     student = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, blank=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=3, choices=Status.choices, default=Status.ENROLLED)
+
+    def __str__(self):
+        return self.student.user.username + " - " + self.get_status_display()

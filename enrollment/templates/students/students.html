@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block title %} Students {% endblock %} 
+{% block content %}
+<button><a href="{% url 'addstudent' %}">add student</a></button>
+<br />
+{% for student in data %}
+{{student}} 
+<button><a href="{% url 'editstudent' student.id %}">edit</a></button>
+<button><a href="">edit enrollment form</a></button>
+<br />
+{% endfor %} 
+{% endblock %}

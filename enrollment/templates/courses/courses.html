@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+{% block title %} Courses {% endblock %} 
+{% block content %}
+<button><a href="{% url 'addcourse' %}">Add course</a></button><br />
+{% for course in data %} 
+{{course}} 
+<button><a href="{% url 'editcourse' course.id %}">edit</a></button>
+<button><a href="{% url 'addmentortocourse' course.id %}">add mentor</a></button>
+<button><a href="{% url 'confirmdelete' course.id %}">delete</a></button>
+<button><a href="{% url 'coursestudents' course.id %}">see students</a></button>
+<br />
+{% endfor %}
+{% endblock %}

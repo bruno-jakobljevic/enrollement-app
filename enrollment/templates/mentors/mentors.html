@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+{% block title %} Mentors {% endblock %} 
+{% block content %}
+<button><a href="{% url 'addmentor' %}">add mentor</a></button>
+<br />
+{% for mentor in data %}
+{{mentor}} 
+<button><a href="{% url 'editmentor' mentor.id %}">edit</a></button>
+<br />
+{% endfor %} 
+{% endblock %}

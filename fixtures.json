@@ -9,7 +9,7 @@
       "credits": 5,
       "semester_full_time": 1,
       "semester_part_time": 1,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -22,7 +22,7 @@
       "credits": 6,
       "semester_full_time": 1,
       "semester_part_time": 3,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -35,7 +35,7 @@
       "credits": 6,
       "semester_full_time": 1,
       "semester_part_time": 1,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -48,7 +48,7 @@
       "credits": 7,
       "semester_full_time": 1,
       "semester_part_time": 2,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -61,7 +61,7 @@
       "credits": 4,
       "semester_full_time": 1,
       "semester_part_time": 1,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -74,7 +74,7 @@
       "credits": 2,
       "semester_full_time": 1,
       "semester_part_time": 1,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -87,7 +87,7 @@
       "credits": 7,
       "semester_full_time": 2,
       "semester_part_time": 2,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -100,7 +100,7 @@
       "credits": 6,
       "semester_full_time": 2,
       "semester_part_time": 2,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -113,7 +113,7 @@
       "credits": 7,
       "semester_full_time": 2,
       "semester_part_time": 3,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -126,7 +126,7 @@
       "credits": 8,
       "semester_full_time": 2,
       "semester_part_time": 3,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -139,7 +139,7 @@
       "credits": 2,
       "semester_full_time": 2,
       "semester_part_time": 2,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -152,7 +152,7 @@
       "credits": 6,
       "semester_full_time": 3,
       "semester_part_time": 4,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -165,7 +165,7 @@
       "credits": 8,
       "semester_full_time": 3,
       "semester_part_time": 4,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -178,7 +178,7 @@
       "credits": 6,
       "semester_full_time": 3,
       "semester_part_time": 5,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -191,7 +191,7 @@
       "credits": 6,
       "semester_full_time": 3,
       "semester_part_time": 4,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -204,7 +204,7 @@
       "credits": 4,
       "semester_full_time": 3,
       "semester_part_time": 5,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -217,7 +217,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 5,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -230,7 +230,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 5,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -243,7 +243,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -256,7 +256,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -269,7 +269,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -282,7 +282,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -295,7 +295,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -308,7 +308,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -321,7 +321,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -334,7 +334,7 @@
       "credits": 5,
       "semester_full_time": 4,
       "semester_part_time": 6,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -347,7 +347,7 @@
       "credits": 2,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -360,7 +360,7 @@
       "credits": 6,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -373,7 +373,7 @@
       "credits": 2,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -386,7 +386,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -399,7 +399,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -412,7 +412,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -425,7 +425,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -438,7 +438,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -451,7 +451,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -464,7 +464,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -477,7 +477,7 @@
       "credits": 5,
       "semester_full_time": 5,
       "semester_part_time": 7,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -490,7 +490,7 @@
       "credits": 6,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   },
   {
@@ -503,7 +503,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -516,7 +516,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -529,7 +529,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -542,7 +542,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -555,7 +555,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -568,7 +568,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -581,7 +581,7 @@
       "credits": 5,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -594,7 +594,7 @@
       "credits": 4,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -607,7 +607,7 @@
       "credits": 4,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "Y"
+      "is_optional": "Y"
     }
   },
   {
@@ -620,7 +620,7 @@
       "credits": 8,
       "semester_full_time": 6,
       "semester_part_time": 8,
-      "is_elective": "N"
+      "is_optional": "N"
     }
   }
 ]

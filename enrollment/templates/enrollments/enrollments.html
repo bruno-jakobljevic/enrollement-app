@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% block title %} Students {% endblock %} 
+{% block content %}
+<button><a href="{% url 'addenroll' %}">add enrollment</a></button>
+<br />
+{% for enroll in data %}
+{{enroll}} <button><a href="{% url 'editenroll' enroll.id %}">edit</a></button>
+<br />
+{% endfor %} 
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% block title %} Students - {{course.name}} - {{course.code}} {% endblock %} 
+{% block content %}
+<form method="get">
+    <label for="status">Filter by status:</label>
+    <select name="status" id="status" onchange="this.form.submit()">
+        <option value="">-- All --</option>
+        {% for value, display in status_choices %}
+            <option value="{{ value }}" {% if current_status == value %}selected{% endif %}>{{ display }}</option>
+        {% endfor %}
+    </select>
+</form>
+{% if enrollments %}
+<ul>
+    {% for enr in enrollments %}
+        <li>{{enr}} <button><a href="{% url 'changestatus' enr.id %}">Change status</a></button></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No students found</p>
+{% endif %}
+{% endblock %}

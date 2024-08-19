@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+{% block title %} Courses {% endblock %} 
+{% block content %}
+<h1>{{course.name}}</h1>
+<ul>
+{% for enr in enrollments %}
+<li>USERNAME: {{enr.student.user.username}} - STATUS: {{enr.get_status_display}}</li>
+<br />
+</ul>
+{% endfor %} 
+{% endblock %}

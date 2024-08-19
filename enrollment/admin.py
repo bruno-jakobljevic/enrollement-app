@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 admin.site.register(Role)
 admin.site.register(Profile)
-admin.site.register(Subject)
+admin.site.register(Course)
 admin.site.register(Enrollment)
 
 # odi mos sam interface za admin-a radit
