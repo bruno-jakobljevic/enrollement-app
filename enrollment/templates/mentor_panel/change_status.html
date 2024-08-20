@@ -1,8 +1,10 @@
+<!-- prettier-ignore -->
 {% extends 'base.html'%}
 {% block content %}
+<h2>Change status for:  {{enrollment.student.user.username}} - {{enrollment.course.name}}</h2>
 <form method="post">
-    {{form}}
-    <input type="submit" value="Submit">
-    {% csrf_token %}
+  {{form}}
+  <input type="submit" value="Submit" />
+  {% csrf_token %}
 </form>
 {% endblock %}

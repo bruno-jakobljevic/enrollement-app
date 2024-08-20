@@ -1,44 +1,53 @@
+<!-- prettier-ignore -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enrollment</title>
+    <title>Mooodle</title>
   </head>
   <body>
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <header>
-      <h1>{% block title %}Enrollment{% endblock %}</h1>
+      <h1>{% block title %}Mooodle{% endblock %}</h1>
       <nav>
         <ul>
+          <li><a href="{% url 'base' %}">Home</a></li>
+          {% if not user.is_authenticated %}
+          <li><a href="{% url 'signup' %}">Sing-up</a></li>
           <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
           <li><a href="{% url 'courses' %}">Courses</a></li>
           {% if user.profile.role.role_name == "A" %}
           <li><a href="{% url 'students' %}">Students</a></li>
-          {% else %}
-          <li><a href="{% url 'students' %}">Unavaliable</a></li>
-          {% endif %}
           <li><a href="{% url 'mentors' %}">Mentors</a></li>
           <li><a href="{% url 'enrollments' %}">Enrollments</a></li>
-          <li><a href="{% url 'signup' %}">Sing-up</a></li>
+          {% endif %} {% if user.profile.role.role_name == "M" %}
           <li><a href="{% url 'mentor_courses' %}">My courses</a></li>
+          {% endif %} {% if user.profile.role.role_name == "S" %}
+          <li><a href="{% url 'studentenrollments' %}">My enrollments</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
-    <main>{% block content %} {% endblock %}
-      {% if user.is_authenticated %}
-      Hi {{user.username}}
+    <main>
+      {% block content %} {% endblock %} {% if user.is_authenticated %}
       <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
         <button type="submit">Log Out</button>
       </form>
-      {% else %}
-      Not logged in!
-      <a href="{% url 'login' %}">Log In</a>
       {% endif %}
     </main>
 
     <footer>
-      <p>&copy; Didd</p>
+      <p>&copy; Mooodle</p>
     </footer>
   </body>
 </html>

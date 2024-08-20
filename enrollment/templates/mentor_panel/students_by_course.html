@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 {% extends 'base.html' %} 
 {% block title %} Students - {{course.name}} - {{course.code}} {% endblock %} 
 {% block content %}
@@ -17,6 +18,6 @@
     {% endfor %}
 </ul>
 {% else %}
-<p>No students found</p>
+    <p>No students found</p>
 {% endif %}
 {% endblock %}

@@ -1,8 +1,9 @@
+<!-- prettier-ignore -->
 {% extends 'base.html'%}
 {% block content %}
 <form method="post">
-    {{form}}
-    <input type="submit" value="Submit">
-    {% csrf_token %}
+  {{form}}
+  <input type="submit" value="Submit" />
+  {% csrf_token %}
 </form>
 {% endblock %}

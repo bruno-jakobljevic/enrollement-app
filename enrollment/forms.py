@@ -108,6 +108,16 @@ class EnrollmentForm(forms.ModelForm):
         student_role = Role.objects.get(role_name=Role.Roles.STUDENT)
         self.fields['student'].queryset = Profile.objects.filter(role=student_role)
 
+class StudentEnrollmentForm(forms.ModelForm):
+    class Meta:
+        model = Enrollment
+        fields = ['student', 'course', 'status']
+
+    def __init__(self, *args, **kwargs):
+        super(StudentEnrollmentForm, self).__init__(*args, **kwargs)
+        student_role = Role.objects.get(role_name=Role.Roles.STUDENT)
+        self.fields['student'].queryset = Profile.objects.filter(role=student_role)
+
 class EditEnrollmentForm(forms.ModelForm):
     class Meta:
         model = Enrollment

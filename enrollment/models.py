@@ -39,7 +39,7 @@ class Course(models.Model):
     semester_part_time = models.IntegerField()
     is_optional = models.CharField(max_length=2, choices=Optional.choices, default=Optional.NO)
     def __str__(self):
-        return self.name + " - " + str(self.code) + " - " + str(self.credits)
+        return self.name + " - " + str(self.code) + " - " + str(self.credits) + " ECTS"
 
 class Enrollment(models.Model):
     class Status(models.TextChoices):
@@ -52,4 +52,4 @@ class Enrollment(models.Model):
     status = models.CharField(max_length=3, choices=Status.choices, default=Status.ENROLLED)
 
     def __str__(self):
-        return self.student.user.username + " - " + self.get_status_display()
+        return self.student.user.username + " - " + self.course.name + " - " + self.get_status_display() 

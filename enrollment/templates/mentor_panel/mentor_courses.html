@@ -1,15 +1,18 @@
+<!-- prettier-ignore -->
 {% extends 'base.html' %} 
 {% block title %} My courses {% endblock %} 
 {% block content %}
 {% if courses %}
 <ul>
-{% for course in courses %}
-<li>{{ course.name }}({{ course.code }}) - ECTS: {{ course.credits }}
-    <button><a href="{% url 'list_by_course' course.id %}">View students</a></button>
-</li>
-{% endfor %}
+  {% for course in courses %}
+  <li>
+    {{ course.name }}({{ course.code }}) - ECTS: {{ course.credits }}
+    <button>
+      <a href="{% url 'listbycourse' course.id %}">View students</a>
+    </button>
+  </li>
+  {% endfor %}
 </ul>
 {% else %}
 <p>You are not assigned to mentor any courses at the moment.</p>
-{% endif %}
-{% endblock %}
+{% endif %} {% endblock %}
