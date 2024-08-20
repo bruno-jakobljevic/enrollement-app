@@ -1,14 +1,13 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 
-from django.http import HttpResponse, HttpResponseNotAllowed, Http404
-from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseNotAllowed, Http404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib import messages
 
 from .models import *
 from .decorators import *
-from .forms import CourseForm, StudentForm, MentorCourseForm, StudentFormEdit, EnrollmentForm, CustomUserCreationForm, EditEnrollmentForm
+from .forms import CourseForm, StudentForm, MentorForm, MentorCourseForm, StudentFormEdit, EnrollmentForm, CustomUserCreationForm, EditEnrollmentForm
 
 
 def index(request):
@@ -18,6 +17,14 @@ def index(request):
         profiles = []
     return render(request, 'base.html', {"profiles": profiles})
 
+def courses(request):
+    try:
+        courses = Course.objects.all()
+    except Course.DoesNotExist:
+        courses = []
+    return render(request, "courses/courses.html", {"data": courses})
+
+@admin_required
 def students(request):
     try:
         students = Profile.objects.filter(role=3)
@@ -25,6 +32,7 @@ def students(request):
         students = []
     return render(request, "students/students.html", {"data": students})
 
+@admin_required
 def add_student(request):
     if request.method == 'GET':
         form = StudentForm()
@@ -40,6 +48,7 @@ def add_student(request):
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
 
+@admin_required
 def edit_student(request, student_id):
     student = get_object_or_404(Profile, pk=student_id)
     if request.method == 'GET':
@@ -55,7 +64,8 @@ def edit_student(request, student_id):
             return redirect('students')
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
-    
+
+@admin_required 
 def mentors(request):
         try:
             mentors = Profile.objects.filter(role=2)
@@ -63,12 +73,13 @@ def mentors(request):
             mentors = []
         return render(request, "mentors/mentors.html", {"data": mentors})
 
+@admin_required
 def add_mentor(request):
     if request.method == 'GET':
-        form = StudentForm()
+        form = MentorForm()
         return render(request, 'mentors/add_mentor.html', {"form":form})
     elif request.method == 'POST':        
-        form = StudentForm(request.POST)
+        form = MentorForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('mentors')
@@ -78,6 +89,7 @@ def add_mentor(request):
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
 
+@admin_required
 def edit_mentor(request, mentor_id):
     mentor = get_object_or_404(Profile, pk=mentor_id)
     if request.method == 'GET':
@@ -93,13 +105,6 @@ def edit_mentor(request, mentor_id):
             return redirect('mentors')
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
-
-def courses(request):
-    try:
-        courses = Course.objects.all()
-    except Course.DoesNotExist:
-        courses = []
-    return render(request, "courses/courses.html", {"data": courses})
 
 @admin_required
 def add_course(request):
@@ -150,38 +155,56 @@ def add_mentor_to_course(request, course_id):
         return redirect('courses')
     else:
         return HttpResponseNotAllowed('GET', 'POST')
+    
+@admin_required
+def delete_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    if request.method == "POST":
+        user.delete()
+        messages.success(request, 'User deleted successfully')
+        return redirect('base')  
+    return render(request, 'confirm_delete.html')
 
+@admin_required
+def delete_enroll(request, enrollment_id):
+    enrollment = get_object_or_404(Enrollment, id=enrollment_id)
+    if request.method == "GET":
+        return render(request, 'confirm_delete.html')
+    elif request.method == "POST":
+        enrollment.delete()
+        messages.success(request, 'Enrollment deleted successfully')
+        return redirect('base')
+    else:
+        return HttpResponseNotAllowed(['GET', 'POST'])
+    
 @admin_required
 def delete_course(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
-    if 'y' in request.POST:
+    if request.method == "POST":
         course.delete()
-        return redirect('courses')
-    else:
-        return redirect('courses')
+        messages.success(request, 'Course deleted successfully')
+        return redirect('base')  
+    return render(request, 'confirm_delete.html')
 
-def confirm_delete(request, course_id):
-    if request.method == 'GET':
-        return render(request, 'courses/confirm_delete.html', {"data":course_id})
-    return HttpResponseNotAllowed(['GET'])
-    
+@admin_required
 def course_students(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
-    enrollments = get_list_or_404(Enrollment, course=course)
-    students = [enrollment.student for enrollment in enrollments]
+    enrollments = Enrollment.objects.filter(course=course)
+
     return render(request, 'courses/course_enrollments.html', {
         'course': course,
-        'students': students,
         'enrollments': enrollments,
     })
 
+@admin_required
 def enrollments(request):
     try:
-        e = Enrollment.objects.all()
-    except e.DoesNotExist:
+        ernollments = Enrollment.objects.all()
+    except ernollments.DoesNotExist:
         raise Http404("Enrollments do not exist")
-    return render(request, "enrollments/enrollments.html", {"data": e})
+    return render(request, "enrollments/enrollments.html", {"data": ernollments})
 
+@admin_required
 def add_enroll(request):
     if request.method == 'GET':
         form = EnrollmentForm()
@@ -189,15 +212,22 @@ def add_enroll(request):
     elif request.method == 'POST':
         form = EnrollmentForm(request.POST)
         if form.is_valid():
+            student = form.cleaned_data['student']
+            course = form.cleaned_data['course']
+
+            if Enrollment.objects.filter(student=student, course=course).exists():
+                messages.error(request, 'This student is already enrolled in this course.')
+                return redirect('enrollments')
+            
             form.save()
-            return redirect('base') 
+            return redirect('enrollments')
         else:
             messages.error(request, 'Form is not valid')
             return redirect('base')
     else:
         HttpResponseNotAllowed('GET', 'POST')
     
-
+@admin_required
 def edit_enroll(request, enrollment_id):
     enrollment = get_object_or_404(Enrollment, pk=enrollment_id)
     if request.method == 'GET':
@@ -210,6 +240,13 @@ def edit_enroll(request, enrollment_id):
         else:
             messages.error(request, 'Form is not valid')
     return redirect('enrollments')
+
+@admin_required
+def student_enrollments(request, student_id):
+    profile = get_object_or_404(Profile, id=student_id)
+    enrollments = Enrollment.objects.filter(student=profile)
+
+    return render(request, 'students/student_enrollments.html', {'enrollments': enrollments, 'student': profile})
 
 @mentor_required
 def mentor_courses(request):
@@ -254,7 +291,7 @@ def change_status_of_enrollment(request, enrollment_id):
         return redirect('mentor_courses')
     else:
         return HttpResponseNotAllowed(['GET', 'POST'])
-        
+    
 @student_required
 def enroll(request, course_id):
     course = get_object_or_404(Course, id=course_id)
@@ -267,20 +304,24 @@ def enroll(request, course_id):
     enrollment = Enrollment(student=profile, course=course, status=Enrollment.Status.ENROLLED)
     enrollment.save()
 
-    return redirect('studentenrollments')
+    return redirect('myenrollments')
 
 @student_required
-def student_enrollments(request):
+def my_enrollments(request):
     profile = get_object_or_404(Profile, user=request.user)
-    enrollments = get_list_or_404(Enrollment, student=profile)
+    enrollments = Enrollment.objects.filter(student=profile)
 
-    return render(request, 'student_panel/my_enrollments.html', {'enrollments': enrollments})
+    return render(request, 'student_panel/my_enrollments.html', {'enrollments': enrollments, 'student': profile})
 
 @student_required
 def disenroll(request, enrollment_id):
     enrollment = get_object_or_404(Enrollment, id=enrollment_id, student__user=request.user)
     enrollment.delete()
-    return redirect('studentenrollments')
+    return redirect('myenrollments')
+
+def course_details(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    return render(request, 'courses/course_details.html', {'course': course})
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm

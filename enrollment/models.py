@@ -20,8 +20,8 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True, blank=True, default=3)
-    status = models.CharField(max_length=2, choices=Status.choices, default='FT')
-
+    status = models.CharField(max_length=2, choices=Status.choices, blank=True, null=True, default='N')
+    
     def __str__(self):
         return self.user.username + " - " + self.role.__str__() + " - " + self.user.email + " - " + self.get_status_display()
 
@@ -34,10 +34,10 @@ class Course(models.Model):
     code = models.CharField(max_length=16)
     course_mentor = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
     description = models.TextField()
-    credits = models.IntegerField()
+    credits = models.IntegerField(blank=False)
     semester_full_time = models.IntegerField()
     semester_part_time = models.IntegerField()
-    is_optional = models.CharField(max_length=2, choices=Optional.choices, default=Optional.NO)
+    is_optional = models.CharField(max_length=2, choices=Optional.choices, blank=False)
     def __str__(self):
         return self.name + " - " + str(self.code) + " - " + str(self.credits) + " ECTS"
 
@@ -49,7 +49,7 @@ class Enrollment(models.Model):
 
     student = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
-    status = models.CharField(max_length=3, choices=Status.choices, default=Status.ENROLLED)
+    status = models.CharField(max_length=3, choices=Status.choices, default='E')
 
     def __str__(self):
         return self.student.user.username + " - " + self.course.name + " - " + self.get_status_display() 

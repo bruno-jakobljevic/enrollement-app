@@ -1,10 +1,12 @@
 <!-- prettier-ignore -->
 {% extends 'base.html' %} 
-{% block title %} Students {% endblock %} 
+{% block title %} Enrollments {% endblock %} 
 {% block content %}
 <button><a href="{% url 'addenroll' %}">add enrollment</a></button>
 <br />
 {% for enroll in data %} {{enroll}}
 <button><a href="{% url 'editenroll' enroll.id %}">edit</a></button>
+<button><a href="{% url 'deleteenroll' enroll.id %}">delete</a></button>
 <br />
-{% endfor %} {% endblock %}
+{% endfor %} 
+{% endblock %}

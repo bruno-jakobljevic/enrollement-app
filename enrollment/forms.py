@@ -34,14 +34,18 @@ class MentorCourseForm(ModelForm):
         mentor_role = Role.objects.get(role_name=Role.Roles.MENTOR)
         self.fields['course_mentor'].queryset = Profile.objects.filter(role=mentor_role)
 
-class StudentForm(forms.ModelForm):
+class StudentForm(ModelForm):
     username = forms.CharField(max_length=50, required=True)
     email = forms.EmailField(required=True)
     password = forms.CharField(widget=forms.PasswordInput)
+    status = forms.ChoiceField(
+        choices=[(value, label) for value, label in Profile.Status.choices if value != 'N'],
+        required=True
+    )
 
     class Meta:
         model = Profile
-        fields = ['role', 'status']
+        fields = ['status']
 
     def save(self, commit=True):
         user = User.objects.create_user(
@@ -54,11 +58,38 @@ class StudentForm(forms.ModelForm):
 
         if created:
             profile.status = self.cleaned_data['status']
-            profile.role = self.cleaned_data['role']
+            profile.role = Role.objects.get(role_name=Role.Roles.STUDENT)
             if commit:
                 profile.save()
 
         return profile
+    
+class MentorForm(ModelForm):
+    username = forms.CharField(max_length=50, required=True)
+    email = forms.EmailField(required=True)
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = Profile
+        fields = []
+
+    def save(self, commit=True):
+        user = User.objects.create_user(
+            username=self.cleaned_data['username'],
+            email=self.cleaned_data['email'],
+            password=self.cleaned_data['password']
+        )
+
+        profile, created = Profile.objects.get_or_create(user=user)
+
+        if created:
+            profile.status = Profile.Status.NONE
+            profile.role = Role.objects.get(role_name=Role.Roles.STUDENT)
+            if commit:
+                profile.save()
+
+        return profile
+
     
 class StudentFormEdit(forms.ModelForm):
     username = forms.CharField(max_length=50, required=True)

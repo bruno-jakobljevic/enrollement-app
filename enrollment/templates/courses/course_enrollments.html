@@ -3,11 +3,17 @@
 {% block title %} Courses {% endblock %} 
 {% block content %}
 <h1>{{course.name}}</h1>
+{% if enrollments %}
 <ul>
-  {% for enr in enrollments %}
+  {% for enrollment in enrollments %}
   <li>
-    student: {{enr.student.user.username}} - status: {{enr.get_status_display}}
+    student: {{enrollment.student.user.username}} - status: {{enrollment.get_status_display}}
+    <button><a href="{% url 'editenroll' enrollment.id %}">edit</a></button>
+  <button><a href="{% url 'deleteenroll' enrollment.id %}">delete</a></button>  
   </li>
-  <br />
+  {% endfor %}
 </ul>
-{% endfor %} {% endblock %}
+{% else %}
+<p>No enrollments</p>
+{% endif %}
+{% endblock %}

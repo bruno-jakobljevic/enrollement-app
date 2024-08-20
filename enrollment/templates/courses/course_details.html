@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %} 
+{% block title %} {{course.name}} {% endblock %} 
+{% block content %}
+<span>
+    Naziv predmeta: {{ course.name }}({{ course.code }})<br>
+    ECTS: {{course.credits}}<br>
+    Mentor: {{course.course_mentor.user.email}}<br>
+    FT: {{course.semester_full_time}} - PT:{{course.semester_part_time}} <br>
+    Izborni: {{course.is_optional}} <br>
+    Opis: {{course.description}} <br>
+    <button><a href="{% url 'enroll' course.id %}">enroll</a></button>
+</span>
+
+{% endblock %}

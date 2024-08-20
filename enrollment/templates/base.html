@@ -4,21 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Mooodle</title>
   </head>
   <body>
-    {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    
 
     <header>
       <h1>{% block title %}Mooodle{% endblock %}</h1>
+    </header>
+    
+    <div class="container">
       <nav>
-        <ul>
+        <ul class="navbar">
           <li><a href="{% url 'base' %}">Home</a></li>
           {% if not user.is_authenticated %}
           <li><a href="{% url 'signup' %}">Sing-up</a></li>
@@ -32,22 +32,32 @@
           {% endif %} {% if user.profile.role.role_name == "M" %}
           <li><a href="{% url 'mentor_courses' %}">My courses</a></li>
           {% endif %} {% if user.profile.role.role_name == "S" %}
-          <li><a href="{% url 'studentenrollments' %}">My enrollments</a></li>
+          <li><a href="{% url 'myenrollments' %}">My enrollments</a></li>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <li>
+            <form action="{% url 'logout' %}" method="post" class="logout-form">
+              {% csrf_token %}
+              <button type="submit" class="logout-button">Log Out</button>
+            </form>
+          </li>
           {% endif %}
         </ul>
       </nav>
-    </header>
-    <main>
-      {% block content %} {% endblock %} {% if user.is_authenticated %}
-      <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Log Out</button>
-      </form>
-      {% endif %}
-    </main>
-
-    <footer>
-      <p>&copy; Mooodle</p>
-    </footer>
+  
+      <main>
+        {% block content %}
+          {% if user.is_authenticated %}
+            <h2>Welcome, {{ user.username }}!</h2>
+          {% endif %}
+        {% endblock %}
+        
+        {% if messages %}
+          {% for message in messages %}
+              {{ message }}
+          {% endfor %}
+        {% endif %}
+      </main>
+    </div>
   </body>
 </html>

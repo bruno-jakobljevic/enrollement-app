@@ -4,7 +4,10 @@
 {% block content %}
 <button><a href="{% url 'addmentor' %}">add mentor</a></button>
 <br />
-{% for mentor in data %} {{mentor}}
+{% for mentor in data %} 
+{{mentor}}
 <button><a href="{% url 'editmentor' mentor.id %}">edit</a></button>
+<button><a href="{% url 'deleteuser' mentor.user.id %}">delete</a></button>
 <br />
-{% endfor %} {% endblock %}
+{% endfor %} 
+{% endblock %}

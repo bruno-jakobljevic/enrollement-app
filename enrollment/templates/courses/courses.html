@@ -9,11 +9,12 @@
 {% if user.profile.role.role_name == "A" %}
     <button><a href="{% url 'editcourse' course.id %}">edit</a></button>
     <button><a href="{% url 'addmentortocourse' course.id %}">add mentor</a></button>
-    <button><a href="{% url 'confirmdelete' course.id %}">delete</a></button>
+    <button><a href="{% url 'deletecourse' course.id %}">delete</a></button>
     <button><a href="{% url 'coursestudents' course.id %}">see students</a></button>
 {% endif %} 
 {% if user.profile.role.role_name == "S" %}
 <button><a href="{% url 'enroll' course.id %}">enroll</a></button>
+<button><a href="{% url 'coursedetails' course.id %}">details</a></button>
 {% endif %}
 <br />
 {% endfor %} 

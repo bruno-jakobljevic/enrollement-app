@@ -1,9 +1,0 @@
-<!-- prettier-ignore -->
-{% block content %}
-<form action="{% url 'deletecourse' data %}" method="POST">
-    <p>Are you sure?</p>
-    <input type="submit" name="y" value="Yes">
-    <input type="submit" name="n" value="No">
-    {% csrf_token %}
-</form>
-{%endblock%}

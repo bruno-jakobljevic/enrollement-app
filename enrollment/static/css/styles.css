@@ -1,0 +1,78 @@
+/* General reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f0f0f0;
+}
+
+.title {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* Flexbox container for nav and content */
+.container {
+  display: flex;
+  height: calc(
+    100vh - 60px
+  ); /* Adjust this value to account for the header height */
+}
+
+nav {
+  width: 250px;
+  background-color: #333;
+}
+
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #575757;
+}
+
+.logout-form {
+  margin: 0;
+  padding: 0;
+}
+
+.logout-button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.logout-button:hover {
+  background: #ff1a1a;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}

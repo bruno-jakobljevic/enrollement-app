@@ -1,0 +1,15 @@
+<!-- student_enrollments.html -->
+{% extends 'base.html' %}
+{% block title %} Student Enrollments {% endblock %}
+{% block content %}
+<p>Enrollments for {{ student.user.username }} ({{ student.get_status_display }})</p>
+{% if enrollments %}
+    <ul>
+        {% for enrollment in enrollments %}
+            <li>{{ enrollment.course.name }}({{ enrollment.course.code }}) - {{ enrollment.get_status_display }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No enrollments found for this student.</p>
+{% endif %}
+{% endblock %}
